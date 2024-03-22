@@ -33,6 +33,6 @@ jobs:
 
       - name: Publish
         run: |
-          npx lerna publish from-git --no-private --include-merged-tags --loglevel silly
+          npx lerna publish from-git --no-private --include-merged-tags --yes --loglevel silly
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
