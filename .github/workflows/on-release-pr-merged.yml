@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           fetch-depth: "0"
 
-    #   - name: Pull all tags
-    #     run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      #   - name: Pull all tags
+      #     run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
