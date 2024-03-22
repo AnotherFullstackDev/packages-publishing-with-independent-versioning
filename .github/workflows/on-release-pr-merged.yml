@@ -28,6 +28,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set up NPM
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+          email=my@email.com
+          //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       #   - name: Build
       #     run: npm run build
 
