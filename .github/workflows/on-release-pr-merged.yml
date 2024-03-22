@@ -1,0 +1,32 @@
+name: Release package
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  publish:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+    #   - name: Build
+    #     run: npm run build
+
+      - name: Publish
+        run: |
+            npx lerna publish from-git --no-private
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
