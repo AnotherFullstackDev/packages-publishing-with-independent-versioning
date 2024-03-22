@@ -18,6 +18,12 @@ Command to update packages version. By adding/removing the `--no-git-tag-version
 npx lerna version --no-push --no-git-tag-version --no-private
 ```
 
+A better way to do version bumps is with puthing right away. In this case all the commits and tags will be puthsed to the repository and  prevent possible publishing problems.
+
+```bash
+npx lerna version --no-private
+```
+
 IMPORTANT! Not sure about the behavior of the publishing in case when a version bump is made but there are additional changed made before the publish command runs.
 
 - With `publish from-package` a package is published even if it got a change after the version bump had been made. That creates a chance of publishing a version with unexpected changes;
