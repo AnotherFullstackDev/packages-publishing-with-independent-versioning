@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: "0"
+
+      - name: Pull all tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -22,11 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-    #   - name: Build
-    #     run: npm run build
+      #   - name: Build
+      #     run: npm run build
 
       - name: Publish
         run: |
-            npx lerna publish from-git --no-private
+          npx lerna publish from-git --no-private
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
