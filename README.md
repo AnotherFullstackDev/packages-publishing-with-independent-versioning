@@ -20,6 +20,8 @@ npx lerna version --no-push --no-git-tag-version --no-private
 
 IMPORTANT! Not sure about the behavior of the publishing in case when a version bump is made but there are additional changed made before the publish command runs.
 
+- With `publish from-package` a package is published even if it got a change after the version bump had been made. That creates a chance of publishing a version with unexpected changes;
+
 Publishing might be done in several ways. The most convenient seems to be the option to publish packages depending on whether the version in the NPM repository or not.
 
 Publishing with synchronization to the registry
