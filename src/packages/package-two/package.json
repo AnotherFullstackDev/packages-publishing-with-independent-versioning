@@ -1,5 +1,5 @@
 {
-  "name": "package-two",
+  "name": "@another-fullstack-dev/package-two",
   "version": "1.0.5",
   "description": "",
   "publishConfig": {
