@@ -1,6 +1,6 @@
 {
   "name": "@another-fullstack-dev/package-two",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "publishConfig": {
     "access": "public",
